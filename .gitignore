@@ -1,0 +1,9 @@
+.ionide/
+.vscode/
+bin/
+obj/
+.fake
+.config
+
+.envrc
+.exercism
