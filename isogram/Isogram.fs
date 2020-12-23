@@ -10,7 +10,7 @@ let rec isIsogramHelper (seenChars : char Set) (remainingChars : char list) : bo
 let isIsogram (str : string): bool =
     let alphabet = (Set.ofList ['a'..'z'])
     str
-    |> Seq.map (System.Char.ToLower)
+    |> String.map System.Char.ToLower
     |> Seq.filter (fun char -> Set.contains char alphabet)
     |> Seq.toList
     |> isIsogramHelper Set.empty
