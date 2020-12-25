@@ -7,45 +7,10 @@ type BankAccount
     = Closed
     | Open of AccountBalance
 
-// let mkBankAccount () : BankAccount =
-//     Closed
-
-// let openAccount account =
-//     match account with
-//     | Closed -> Open { Balance = 0.0m }
-//     | Open _ -> account
-
-// let closeAccount account =
-//     match account with
-//     | Closed -> Closed
-//     | Open _ -> Closed
-
-// let getBalance account =
-//     match account with
-//     | Closed -> None
-//     | Open balance -> Some balance
-
-// let updateBalance
-//     (change : decimal)
-//     (account: byref<BankAccount>)
-//     =
-//     match account with
-//     | Closed -> account <- Closed
-//     | Open balance -> account <- Open (balance + change)
-
-
 type Msg
     = SetState of BankAccount
     | GetState of AsyncReplyChannel<BankAccount>
     | UpdateBalance of decimal
-
-    // = OpenAccount
-    // | CloseAccount
-    // | GetBalance
-    // | UpdateBalance of decimal
-
-
-// let updateState oldState msg = oldState
 
 let mailboxProcessor (inbox : MailboxProcessor<Msg>) =
     let rec messageLoop (currentState : BankAccount) = async {
