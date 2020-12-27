@@ -4,6 +4,7 @@ bin/
 obj/
 .fake
 .config
+BenchmarkDotNet.Artifacts/
 
 .envrc
 .exercism
